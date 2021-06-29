@@ -16,7 +16,7 @@
         <Button x:Name="StopTime" Content="StopTimer" HorizontalAlignment="Left" Margin="79,287,0,0" VerticalAlignment="Top" FontSize="28" Grid.Column="1"/>
         <Label x:Name="TimeLeft" Content="TimeLeft" HorizontalAlignment="Left" Margin="48,91,0,0" VerticalAlignment="Top" FontSize="48" Grid.Column="1"/>
         <Button x:Name="OneMinut" Content="1 minut" HorizontalAlignment="Left" Margin="79,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.144,-0.438" FontSize="20" Click="OneMinut_Click"/>
-        <Button x:Name="FiveMinuts" Content="5 minut" HorizontalAlignment="Center" Margin="0,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.144,-0.438" FontSize="20"/>
-        <Button x:Name="TenMinuts" Content="10 minut" HorizontalAlignment="Left" Margin="287,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.144,-0.438" FontSize="20"/>
+        <Button x:Name="FiveMinuts" Content="5 minut" HorizontalAlignment="Center" Margin="0,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.144,-0.438" FontSize="20" Click="FiveMinuts_Click"/>
+        <Button x:Name="TenMinuts" Content="10 minut" HorizontalAlignment="Left" Margin="287,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.144,-0.438" FontSize="20" Click="TenMinuts_Click"/>
     </Grid>
 </Window>

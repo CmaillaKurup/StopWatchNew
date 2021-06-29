@@ -26,9 +26,10 @@ namespace StopWatchNew
             InitializeComponent();
 
             StopwatchController swc = new StopwatchController();
-            swc.Timer += StopwatchController;
+            //swc.Timer += StopwatchController;
         }
 
+        /*
         private void StopwatchController(object sender, EventArgs e)
         {
             if (e is StopwatchEvent)
@@ -60,15 +61,39 @@ namespace StopWatchNew
                 }
             }
         }
+        */
+
+
+        private void TimeLeftCounter(object sender, EventArgs e) 
+        { 
+        
+            while (TimeLeft.Content != "00:00")
+            {
+                
+            }
+        }
 
         private void OneMinut_Click(object sender, RoutedEventArgs e)
         {
-            TimeLeft.Content = DateTime.Now.ToString("mm:ss");
+            //TimeLeft.Content = DateTime.Now.ToString("mm:ss");
+            TimeLeft.Content = "01:00";
+        }
+
+        private void FiveMinuts_Click(object sender, RoutedEventArgs e)
+        {
+            //TimeLeft.Content = DateTime.Now.ToString("mm:ss");
+            TimeLeft.Content = "05:00";
+        }
+
+        private void TenMinuts_Click(object sender, RoutedEventArgs e)
+        {
+            //TimeLeft.Content = DateTime.Now.ToString("mm:ss");
+            TimeLeft.Content = "10:00";
         }
 
         private void StartTime_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
     }
 }

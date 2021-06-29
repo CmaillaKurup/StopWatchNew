@@ -14,17 +14,8 @@ namespace StopWatchNew
 
         public StopwatchController()
         {
-            Thread stopwatch = new Thread(SetTime);
-            stopwatch.Start();
-        }
-
-        
-
-        public void SetTime()
-        {          
-                Timer?.Invoke(this, new StopwatchEvent(sw));
-                Thread.Sleep(5000);
-           
-        }     
+            //Thread stopwatch = new Thread(SetTime);
+            //stopwatch.Start();
+        }            
     }
 }
