@@ -81,8 +81,9 @@ namespace StopWatchNew
 
         private void FiveMinuts_Click(object sender, RoutedEventArgs e)
         {
+            var date = new DateTime();
             //TimeLeft.Content = DateTime.Now.ToString("mm:ss");
-            TimeLeft.Content = "05:00";
+            TimeLeft.Content = date.ToString("05:00");
         }
 
         private void TenMinuts_Click(object sender, RoutedEventArgs e)
