@@ -33,16 +33,42 @@ namespace StopWatchNew
         {
             if (e is StopwatchEvent)
             {
-                Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
+                
+                if (((StopwatchEvent)e).stopwatch.oneMinut)
                 {
-                    
-                }));
+                    Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
+                    {
+                        TimeLeft.Content = ((StopwatchEvent)e).stopwatch.oneMinut;
+                        
+                    }));
+                }
+                if (((StopwatchEvent)e).stopwatch.twoMinut)
+                {
+                    Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
+                    {
+                        TimeLeft.Content = ((StopwatchEvent)e).stopwatch.twoMinut;
+
+                    }));
+                }
+                if (((StopwatchEvent)e).stopwatch.threeMinut)
+                {
+                    Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
+                    {
+                        TimeLeft.Content = ((StopwatchEvent)e).stopwatch.threeMinut;
+
+                    }));
+                }
             }
         }
 
         private void OneMinut_Click(object sender, RoutedEventArgs e)
         {
-            
+            TimeLeft.Content = DateTime.Now.ToString("mm:ss");
+        }
+
+        private void StartTime_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

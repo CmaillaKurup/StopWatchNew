@@ -9,7 +9,8 @@ namespace StopWatchNew
     {
         public event EventHandler Timer;
 
-        Stopwatch sw = new Stopwatch(1, 5, 10);
+        SetTime sw = new SetTime(false, false, false);
+
 
         public StopwatchController()
         {
@@ -17,23 +18,13 @@ namespace StopWatchNew
             stopwatch.Start();
         }
 
+        
+
         public void SetTime()
-        {
-            if (sw.oneMinut == 1)
-            {
+        {          
                 Timer?.Invoke(this, new StopwatchEvent(sw));
                 Thread.Sleep(5000);
-            }
-            if (sw.oneMinut == 5)
-            {
-                Timer?.Invoke(this, new StopwatchEvent(sw));
-                Thread.Sleep(10000);
-            }
-            if (sw.oneMinut == 10)
-            {
-                Timer?.Invoke(this, new StopwatchEvent(sw));
-                Thread.Sleep(20000);
-            }
-        }
+           
+        }     
     }
 }

@@ -12,7 +12,7 @@
             <ColumnDefinition Width="181*"/>
         </Grid.ColumnDefinitions>
         <Label x:Name="SetTime" Content="SetTime" HorizontalAlignment="Left" Margin="135,91,0,0" VerticalAlignment="Top" FontSize="48"/>
-        <Button x:Name="StartTime" Content="StartTimer" HorizontalAlignment="Left" Margin="160,287,0,0" VerticalAlignment="Top" FontSize="28"/>
+        <Button x:Name="StartTime" Content="StartTimer" HorizontalAlignment="Left" Margin="160,287,0,0" VerticalAlignment="Top" FontSize="28" Click="StartTime_Click"/>
         <Button x:Name="StopTime" Content="StopTimer" HorizontalAlignment="Left" Margin="79,287,0,0" VerticalAlignment="Top" FontSize="28" Grid.Column="1"/>
         <Label x:Name="TimeLeft" Content="TimeLeft" HorizontalAlignment="Left" Margin="48,91,0,0" VerticalAlignment="Top" FontSize="48" Grid.Column="1"/>
         <Button x:Name="OneMinut" Content="1 minut" HorizontalAlignment="Left" Margin="79,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.144,-0.438" FontSize="20" Click="OneMinut_Click"/>

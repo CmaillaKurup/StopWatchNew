@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
 
 namespace StopWatchNew
 {
     class StopwatchEvent : EventArgs
     {
-        public Stopwatch stopwatch { get; set; }
+        public SetTime stopwatch { get; set; }
 
-        public StopwatchEvent( Stopwatch stopwatch)
+        public StopwatchEvent( SetTime stopwatch)
         {
             this.stopwatch = stopwatch;
         }
