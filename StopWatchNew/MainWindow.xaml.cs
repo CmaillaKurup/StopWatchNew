@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace StopWatchNew
 {
@@ -23,11 +24,25 @@ namespace StopWatchNew
         public MainWindow()
         {
             InitializeComponent();
+
+            StopwatchController swc = new StopwatchController();
+            swc.Timer += StopwatchController;
+        }
+
+        private void StopwatchController(object sender, EventArgs e)
+        {
+            if (e is StopwatchEvent)
+            {
+                Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
+                {
+                    
+                }));
+            }
         }
 
         private void OneMinut_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
