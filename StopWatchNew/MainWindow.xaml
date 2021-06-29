@@ -1,0 +1,22 @@
+﻿<Window x:Class="StopWatchNew.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StopWatchNew"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="219*"/>
+            <ColumnDefinition Width="181*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="SetTime" Content="SetTime" HorizontalAlignment="Left" Margin="135,91,0,0" VerticalAlignment="Top" FontSize="48"/>
+        <Button x:Name="StartTime" Content="StartTimer" HorizontalAlignment="Left" Margin="160,287,0,0" VerticalAlignment="Top" FontSize="28"/>
+        <Button x:Name="StopTime" Content="StopTimer" HorizontalAlignment="Left" Margin="79,287,0,0" VerticalAlignment="Top" FontSize="28" Grid.Column="1"/>
+        <Label x:Name="TimeLeft" Content="TimeLeft" HorizontalAlignment="Left" Margin="48,91,0,0" VerticalAlignment="Top" FontSize="48" Grid.Column="1"/>
+        <Button x:Name="OneMinut" Content="1 minut" HorizontalAlignment="Left" Margin="79,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.144,-0.438" FontSize="20" Click="OneMinut_Click"/>
+        <Button x:Name="FiveMinuts" Content="5 minut" HorizontalAlignment="Center" Margin="0,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.144,-0.438" FontSize="20"/>
+        <Button x:Name="TenMinuts" Content="10 minut" HorizontalAlignment="Left" Margin="287,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.144,-0.438" FontSize="20"/>
+    </Grid>
+</Window>
