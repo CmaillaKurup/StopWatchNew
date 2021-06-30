@@ -6,15 +6,15 @@ namespace StopWatchNew
 {
     class SetTime
     {
-        public bool oneMinut { get; private set; }
-        public bool twoMinut { get; private set; }
-        public bool threeMinut { get; private set; }
+        public bool oneMinut { get; set; }
+        public bool fiveMinut { get; set; }
+        public bool tenMinut { get; set; }
 
-        public SetTime(bool oneMinut, bool twoMinut, bool threeMinut)
+        public SetTime(bool oneMinut, bool fiveMinut, bool tenMinut)
         {
             this.oneMinut = oneMinut;
-            this.twoMinut = twoMinut;
-            this.threeMinut = threeMinut;            
+            this.fiveMinut = fiveMinut;
+            this.tenMinut = tenMinut;            
         }
     }
 }

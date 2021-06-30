@@ -21,23 +21,17 @@ namespace StopWatchNew
     /// </summary>
     public partial class MainWindow : Window
     {
-        private DateTime endsAt;
-
-        public void EndTime()
-        {
-            endsAt = DateTime.Now.AddMinutes(1);
-        }
         public MainWindow()
         {
             InitializeComponent();
 
             StopwatchController swc = new StopwatchController();
+            //swc.Timer += StopwatchController;
         }
 
-        private void CountDown_Tick(object sender, EventArgs e)
+        private void StopwatchController(EventArgs e)
         {
-            int secondsRemaining = (int)(endsAt - DateTime.Now).TotalSeconds;
-            TimeLeft.Content = secondsRemaining.ToString();
+            
         }
 
         private void OneMinut_Click(object sender, RoutedEventArgs e)
@@ -68,21 +62,27 @@ namespace StopWatchNew
                 TimeLeft.Content = startTime.ToString("10:00");
             }));
         }
-
-        private void StartTime_Click(object sender, RoutedEventArgs e)
+       
+        private void StartTime_Click(object sender, RoutedEventArgs e, EventArgs ee)
         {
-            var endTime = new DateTime();
 
-
-            while (endTime.ToString() != "00:00")
+            if (((StopwatchEvent)ee).stopwatch.oneMinut)
             {
-                int secondsRemaining = (int)(endsAt - DateTime.Now).TotalSeconds;
-                Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
+                DateTime endTime = DateTime.Now.AddMinutes(1);
+
+
+                while (endTime.ToString() != "00:00")
                 {
-                    TimeLeft.Content = secondsRemaining.ToString();
-                }));
-                
-            }     
+                    int secondsRemaining = (int)(endTime - DateTime.Now).TotalSeconds;
+                    Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
+                    {
+                        TimeLeft.Content = secondsRemaining.ToString();
+                    }));
+
+                }
+            }
+            // StopwatchController(((StopwatchEvent)e).stopwatch.oneMinut);
         }
+        
     }
 }
