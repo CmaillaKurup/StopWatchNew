@@ -21,80 +21,68 @@ namespace StopWatchNew
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DateTime endsAt;
+
+        public void EndTime()
+        {
+            endsAt = DateTime.Now.AddMinutes(1);
+        }
         public MainWindow()
         {
             InitializeComponent();
 
             StopwatchController swc = new StopwatchController();
-            //swc.Timer += StopwatchController;
         }
 
-        /*
-        private void StopwatchController(object sender, EventArgs e)
+        private void CountDown_Tick(object sender, EventArgs e)
         {
-            if (e is StopwatchEvent)
-            {
-                
-                if (((StopwatchEvent)e).stopwatch.oneMinut)
-                {
-                    Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
-                    {
-                        TimeLeft.Content = ((StopwatchEvent)e).stopwatch.oneMinut;
-                        
-                    }));
-                }
-                if (((StopwatchEvent)e).stopwatch.twoMinut)
-                {
-                    Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
-                    {
-                        TimeLeft.Content = ((StopwatchEvent)e).stopwatch.twoMinut;
-
-                    }));
-                }
-                if (((StopwatchEvent)e).stopwatch.threeMinut)
-                {
-                    Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
-                    {
-                        TimeLeft.Content = ((StopwatchEvent)e).stopwatch.threeMinut;
-
-                    }));
-                }
-            }
-        }
-        */
-
-
-        private void TimeLeftCounter(object sender, EventArgs e) 
-        { 
-        
-            while (TimeLeft.Content != "00:00")
-            {
-                
-            }
+            int secondsRemaining = (int)(endsAt - DateTime.Now).TotalSeconds;
+            TimeLeft.Content = secondsRemaining.ToString();
         }
 
         private void OneMinut_Click(object sender, RoutedEventArgs e)
         {
-            //TimeLeft.Content = DateTime.Now.ToString("mm:ss");
-            TimeLeft.Content = "01:00";
+            var startTime = new DateTime();
+
+            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
+            {
+                TimeLeft.Content = startTime.ToString("01:00");
+            }));        
         }
 
         private void FiveMinuts_Click(object sender, RoutedEventArgs e)
         {
-            var date = new DateTime();
-            //TimeLeft.Content = DateTime.Now.ToString("mm:ss");
-            TimeLeft.Content = date.ToString("05:00");
+            var startTime = new DateTime();
+
+            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
+            {
+                TimeLeft.Content = startTime.ToString("05:00");
+            }));
         }
 
         private void TenMinuts_Click(object sender, RoutedEventArgs e)
         {
-            //TimeLeft.Content = DateTime.Now.ToString("mm:ss");
-            TimeLeft.Content = "10:00";
+            var startTime = new DateTime();
+            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
+            {
+                TimeLeft.Content = startTime.ToString("10:00");
+            }));
         }
 
         private void StartTime_Click(object sender, RoutedEventArgs e)
         {
-           
+            var endTime = new DateTime();
+
+
+            while (endTime.ToString() != "00:00")
+            {
+                int secondsRemaining = (int)(endsAt - DateTime.Now).TotalSeconds;
+                Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
+                {
+                    TimeLeft.Content = secondsRemaining.ToString();
+                }));
+                
+            }     
         }
     }
 }
