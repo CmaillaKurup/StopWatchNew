@@ -7,6 +7,7 @@ namespace StopWatchNew
 {
     class StopwatchEvent : EventArgs
     {
+        //my EventArgs that takes SetTime and make a event on this
         public SetTime stopwatch { get; set; }
 
         public StopwatchEvent( SetTime stopwatch)

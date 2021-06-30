@@ -6,6 +6,7 @@ namespace StopWatchNew
 {
     class SetTime
     {
+        //This class one and oly purpose is to generate bools for my buttons
         public bool oneMinut { get; set; }
         public bool fiveMinut { get; set; }
         public bool tenMinut { get; set; }
